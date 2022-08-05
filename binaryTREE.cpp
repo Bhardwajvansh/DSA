@@ -729,57 +729,161 @@
 
 // distance between two given nodes 
 
-#include<bits/stdc++.h>
-using namespace std;
-class node{
-    public:
-    int data;
-    node* left;
-    node* right;
-    node(int val){
-        data=val;
-        left=NULL;
-        right=NULL;
-    }
-};
-void disp(node * root){
-    if(root==NULL){
-        return;
-    }
-    cout<<root->data<<" ";
-    disp(root->left);
-    disp(root->right);
-}
-node * LCA(node * root,int n1,int n2){
-    if(root==NULL) return NULL;
-    if(root->data==n1 || root->data==n2){
-        return root;
-    }
-    node * left=LCA(root->left,n1,n2);
-    node * right=LCA(root->right,n1,n2);
-    if(left!=NULL && right!=NULL){
-        return root;
-    }
-    if(left == NULL && right == NULL){
-        return NULL;
-    }
-    if(left!=NULL){
-        return LCA(root->left,n1,n2);
-    }
-    return LCA(root->right,n1,n2);
-}
-int main(){
-    node * root=new node(1);
-    root->left=new node(2);
-    root->right=new node(3);
-    root->left->left=new node(4);
-    root->left->right=new node(5);
-    root->right->left=new node(6);
-    root->right->right=new node(7);
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* left;
+//     node* right;
+//     node(int val){
+//         data=val;
+//         left=NULL;
+//         right=NULL;
+//     }
+// };
+// void disp(node * root){
+//     if(root==NULL){
+//         return;
+//     }
+//     cout<<root->data<<" ";
+//     disp(root->left);
+//     disp(root->right);
+// }
+// node * LCA(node * root,int n1,int n2){
+//     if(root==NULL) return NULL;
+//     if(root->data==n1 || root->data==n2){
+//         return root;
+//     }
+//     node * left=LCA(root->left,n1,n2);
+//     node * right=LCA(root->right,n1,n2);
+//     if(left!=NULL && right!=NULL){
+//         return root;
+//     }
+//     if(left == NULL && right == NULL){
+//         return NULL;
+//     }
+//     if(left!=NULL){
+//         return LCA(root->left,n1,n2);
+//     }
+//     return LCA(root->right,n1,n2);
+// }
+// int main(){
+//     node * root=new node(1);
+//     root->left=new node(2);
+//     root->right=new node(3);
+//     root->left->left=new node(4);
+//     root->left->right=new node(5);
+//     root->right->left=new node(6);
+//     root->right->right=new node(7);
 
-    return 0;
-}
+//     return 0;
+// }
 
 
+// flatern a BT in a linked List
 
-// hello i am vansh
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* left;
+//     node* right;
+//     node(int val){
+//         data=val;
+//         left=NULL;
+//         right=NULL;
+//     }
+// };
+// void disp(node * root){
+//     if(root==NULL){
+//         return;
+//     }
+//     disp(root->left);
+//     cout<<root->data<<" ";
+//     disp(root->right);
+// }
+// void flat(node * root){
+//     if(root==NULL || (root->left==NULL && root->right==NULL)) return;
+//     if(root->left!=NULL){
+//         flat(root->left);
+//         node * temp=root->right;
+//         root->right=root->left;
+//         root->left=NULL;
+//         node * t=root->right;
+//         while(t->right!=NULL){
+//             t=t->right;
+//         }
+//         t->right=temp;
+//     }
+//     flat(root->right);
+// }
+// int main(){
+//     node * root=new node(4);
+//     root->left=new node(9);
+//     root->right=new node(5);
+//     root->left->left=new node(1);
+//     root->left->right=new node(3);
+//     root->right->right=new node(6);
+//     flat(root);
+//     disp(root);
+//     return 0;
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* left;
+//     node* right;
+//     node(int val){
+//         data=val;
+//         left=NULL;
+//         right=NULL;
+//     }
+// };
+// void disp(node * root){
+//     if(root==NULL){
+//         return;
+//     }
+//     disp(root->left);
+//     cout<<root->data<<" ";
+//     disp(root->right);
+// }
+// void flat(node * root){
+//     if(root==NULL || (root->left==NULL && root->right==NULL)) return;
+//     if(root->left!=NULL){
+//         flat(root->left);
+//         node * temp=root->right;
+//         root->right=root->left;
+//         root->left=NULL;
+//         node * t=root->right;
+//         while(t->right!=NULL){
+//             t=t->right;
+//         }
+//         t->right=temp;
+//     }
+//     flat(root->right);
+// }
+// int main(){
+//     node * root=new node(4);
+//     root->left=new node(9);
+//     root->right=new node(5);
+//     root->left->left=new node(1);
+//     root->left->right=new node(3);
+//     root->right->right=new node(6);
+//     flat(root);
+//     disp(root);
+//     return 0;
+// }
+
+// to find the diistance between the two given nodes
+// #include<bits/stdc++.h>
+// using namespace std;
+ 
+// int main(){
+    
+//     return 0;
+// }
