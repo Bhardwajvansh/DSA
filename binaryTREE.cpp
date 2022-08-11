@@ -879,6 +879,98 @@
 //     return 0;
 // }
 
+
+// Lowest common ansistor
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* left;
+//     node* right;
+//     node(int val){
+//         data=val;
+//         left=NULL;
+//         right=NULL;
+//     }
+// };
+// bool getpath(node *root, int n, vector<int> &path){
+//     if(root==NULL) return false;
+//     path.push_back(root->data);
+//     if(root->data==n){
+//         return true;
+//     }
+//     if(getpath(root->left,n,path) || getpath(root->right,n,path)){
+//         return true;
+//     }
+//     path.pop_back();
+//     return false;
+// }
+// int LCA(node *root,int n1,int n2){
+//     vector<int> path1,path2;
+//     if(!getpath(root,n1,path1) || !getpath(root,n2,path2)){
+//         return -1;
+//     }
+//     for(int i=0;i<max(path1.size(),path2.size());i++){
+//         if(path1[i]!=path2[i]){
+//             return path1[i-1];
+//         }
+//     }
+// }
+// int main(){
+//     node * root=new node(4);
+//     root->left=new node(9);
+//     root->right=new node(5);
+//     root->left->left=new node(1);
+//     root->left->right=new node(3);
+//     root->right->right=new node(6);
+//     cout<<LCA(root,9,5);
+//     return 0;
+// }
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* left;
+//     node* right;
+//     node(int val){
+//         data=val;
+//         left=NULL;
+//         right=NULL;
+//     }
+// };
+// bool getpath(node *root,int n,vector<int> &p){
+//     if(root==NULL) return false;
+//     p.push_back(root->data);
+//     if(root->data==n) return true;
+//     if(getpath(root->left,n,p) || getpath(root->right,n,p)) return true;
+//     p.pop_back();
+//     return false;
+// }
+// int LCA(node *root,int n1,int n2){
+//     vector<int> p1,p2;
+//     if(!getpath(root,n1,p1) || !getpath(root,n2,p2)) return -1;
+//     for(int i=0;i<max(p1.size(),p2.size());i++){
+//         if(p1[i]!=p2[i]) return p1[i-1];
+//     }
+// }
+
+// int main(){
+//     node * root=new node(4);
+//     root->left=new node(9);
+//     root->right=new node(5);
+//     root->left->left=new node(1);
+//     root->left->right=new node(3);
+//     root->right->right=new node(6);
+//     cout<<LCA(root,1,3);
+//     return 0;
+// }
+
+
 // to find the diistance between the two given nodes
 // #include<bits/stdc++.h>
 // using namespace std;
