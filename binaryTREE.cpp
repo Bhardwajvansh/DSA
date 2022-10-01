@@ -971,11 +971,122 @@
 // }
 
 
-// to find the diistance between the two given nodes
+// inorder and preorder to build a b-tree
+
 // #include<bits/stdc++.h>
 // using namespace std;
- 
+// class node{
+//     public:
+//     int data;
+//     node* left;
+//     node* right;
+//     node(int n){
+//         data=n;
+//         left=NULL;
+//         right=NULL;
+//     }
+// };
+// int find(int n,int i,int j,int ino[]){
+//     for(int k=i;k<=j;k++){
+//         if(ino[k]==n) return k;
+//     }
+// }
+// node* built(int pre[],int ino[],int i,int j){
+//     static int ind=0;
+//     if(i>j) return NULL;
+//     int cur=pre[ind];
+//     ind++;
+//     node* n=new node(cur);
+//     if(i==j) return n;
+//     int pos=find(cur,i,j,ino);
+//     n->left=built(pre,ino,i,pos-1);
+//     n->right=built(pre,ino,pos+1,j);
+//     return n;
+// }
+// void display(node * head){
+//     if(head==NULL) return;
+//     display(head->left);
+//     cout<<head->data<<" ";
+//     display(head->right);
+// }
 // int main(){
-    
+//     int pre[]={1,2,4,3,5};
+//     int ino[]={4,2,1,5,3};
+//     node* head=built(pre,ino,0,4);
+//     display(head);
+//     return 0;
+// }
+
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* left;
+//     node* right;
+//     node(int n){
+//         data=n; left=NULL; right=NULL; 
+//     }
+// };
+// int search(int ino[],int i,int j,int n){
+//     for(int k=i;k<=j;k++){
+//         if(ino[k]==n) return k;
+//     }
+// }
+// node * built(int ino[],int pre[],int i,int j){
+//     if(i>j) return NULL;
+//     static int ind=0;
+//     int cur=pre[ind]; ind++;
+//     node * n=new node(cur);
+//     if(i==j) return n;
+//     int pos=search(ino,i,j,cur);
+//     n->left=built(ino,pre,i,pos-1);
+//     n->right=built(ino,pre,pos+1,j);
+//     return n;
+// }
+// void display(node* head){
+//     if(head==NULL) return;
+//     cout<<head->data<<" ";
+//     display(head->left);
+//     display(head->right);
+// }
+// int main(){
+//     int pre[]={1,2,4,3,5};
+//     int ino[]={4,2,1,5,3};
+//     node* head=built(pre,ino,0,4);
+//     display(head);
+//     return 0;
+// }
+
+
+
+// building tree from postorder and inorder
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* right;
+//     node* left;
+//     node(int n){
+//         data=n; left=NULL; right=NULL;
+//     }
+// };
+
+// void display(node* head){
+//     if(head==NULL) return;
+//     display(head->left);
+//     cout<<head->data<<" ";
+//     display(head->right);
+// }
+// int main(){
+//     int pos[]={4,2,5,3,1};
+//     int ino[]={4,2,1,5,3};
+//     node * head=built(ino,pos,0,5);
+//     display(head);   
 //     return 0;
 // }
