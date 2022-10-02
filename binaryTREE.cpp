@@ -1105,3 +1105,33 @@
 // }
 
 
+// level order traversal
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class node{
+    public:
+    int data;
+    node* right;
+    node* left;
+    node(int n){
+        data=n; left=NULL; right=NULL;
+    }
+};
+void display(node* head){
+    if(head==NULL) return;
+    display(head->left);
+    cout<<head->data<<" ";
+    display(head->right);
+}
+int main(){
+    node* head=new node(1);
+    head->left=new node(2);
+    head->left->left=new node(4);
+    head->left->right=new node(5);
+    head->right=new node(3);
+    display(head);   
+    return 0;
+}
+
