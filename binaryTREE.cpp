@@ -1064,7 +1064,6 @@
 
 // building tree from postorder and inorder
 
-
 // #include<bits/stdc++.h>
 // using namespace std;
 // class node{
@@ -1076,7 +1075,21 @@
 //         data=n; left=NULL; right=NULL;
 //     }
 // };
-
+// int find(vector<int> ino,int i,int j,int n){
+//     for(int k=i;k<=j;k++) if(ino[k]==n) return k;
+// }
+// node* built(vector<int> ino,vector<int> pos,int i,int j){
+//     if(i>j) return NULL;
+//     static int ind=4;
+//     int cur=pos[ind];
+//     ind--;
+//     node* n=new node(cur);
+//     if(i==j) return n;
+//     int posi=find(ino,i,j,cur);
+//     n->right=built(ino,pos,posi+1,j);
+//     n->left=built(ino,pos,i,posi-1);
+//     return n; 
+// }
 // void display(node* head){
 //     if(head==NULL) return;
 //     display(head->left);
@@ -1084,9 +1097,11 @@
 //     display(head->right);
 // }
 // int main(){
-//     int pos[]={4,2,5,3,1};
-//     int ino[]={4,2,1,5,3};
-//     node * head=built(ino,pos,0,5);
+//     vector<int> pos={4,2,5,3,1};
+//     vector<int> ino={4,2,1,5,3};
+//     node * head=built(ino,pos,0,4);
 //     display(head);   
 //     return 0;
 // }
+
+
