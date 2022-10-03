@@ -1108,30 +1108,104 @@
 // level order traversal
 
 
-#include<bits/stdc++.h>
-using namespace std;
-class node{
-    public:
-    int data;
-    node* right;
-    node* left;
-    node(int n){
-        data=n; left=NULL; right=NULL;
-    }
-};
-void display(node* head){
-    if(head==NULL) return;
-    display(head->left);
-    cout<<head->data<<" ";
-    display(head->right);
-}
-int main(){
-    node* head=new node(1);
-    head->left=new node(2);
-    head->left->left=new node(4);
-    head->left->right=new node(5);
-    head->right=new node(3);
-    display(head);   
-    return 0;
-}
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* right;
+//     node* left;
+//     node(int n){
+//         data=n; left=NULL; right=NULL;
+//     }
+// };
+// void level(node* head){
+//     queue<node*> q;
+//     q.push(head);
+//     q.push(NULL);
+//     while(!q.empty()){
+//         node* n=q.front();
+//         q.pop();
+//         if(n!=NULL){
+//             cout<<n->data<<" ";
+//             if(n->left!=NULL) q.push(n->left);
+//             if(n->right!=NULL) q.push(n->right);
+//         }   
+//         else if(!q.empty()){
+//             q.push(NULL);
+//         }
+//     }
+// }
+// void display(node* head){
+//     if(head==NULL) return;
+//     display(head->left);
+//     cout<<head->data<<" ";
+//     display(head->right);
+// }
+// int main(){
+//     node* head=new node(1);
+//     head->left=new node(2);
+//     head->right=new node(3);
+//     head->left->left=new node(4);
+//     head->left->right=new node(5);
+//     level(head);
+//     return 0;
+// }
+
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* right;
+//     node* left;
+//     node(int n){
+//         data=n; left=NULL; right=NULL;
+//     }
+// };
+// void level(node* head){
+//     vector<vector<int>> ans;
+//     queue<node*> q;
+//     q.push(head);
+//     q.push(NULL);
+//     vector<int> lev;
+//     while(!q.empty()){
+//         node* n=q.front();
+//         q.pop();
+//         if(n!=NULL){
+//             lev.push_back(n->data);
+//             // cout<<n->data<<" ";
+//             if(n->left!=NULL) q.push(n->left);
+//             if(n->right!=NULL) q.push(n->right);
+//         }
+//         else if(!q.empty()) {q.push(NULL); ans.push_back(lev); lev={};}
+//         else {ans.push_back(lev);}
+            
+//     } 
+//         for(int i=0;i<ans.size();i++){
+//             for(int j=0;j<ans[i].size();j++){
+//                 cout<<ans[i][j]<<" ";
+//             }
+//             cout<<endl;
+//         }
+// }
+// void display(node* head){
+//     if(head==NULL) return;
+//     display(head->left);
+//     cout<<head->data<<" ";
+//     display(head->right);
+// }
+// int main(){
+//     node* head=new node(1);
+//     head->left=new node(2);
+//     head->right=new node(3);
+//     head->right->left=new node(6);
+//     head->right->left->right=new node(10);
+//     head->left->left=new node(4);
+//     head->left->right=new node(5);
+//     level(head);
+//     return 0;
+// }
 
