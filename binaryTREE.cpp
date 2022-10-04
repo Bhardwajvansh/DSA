@@ -1209,3 +1209,154 @@
 //     return 0;
 // }
 
+// height of a binary tree
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* right;
+//     node* left;
+//     node(int n){
+//         data=n; left=NULL; right=NULL;
+//     }
+// };
+// int height(node* head){
+//     if(head==NULL) return 0;
+//     return max(height(head->left),height(head->right))+1;
+// }
+// void display(node* head){
+//     if(head==NULL) return;
+//     display(head->left);
+//     cout<<head->data<<" ";
+//     display(head->right);
+// }
+// int main(){
+//     node* head=new node(1);
+//     head->left=new node(2);
+//     head->right=new node(3);
+//     head->right->left=new node(6);
+//     head->left->left=new node(4);
+//     head->left->right=new node(5);
+//     head->left->right->left=new node(100);
+//     cout<<height(head);
+//     return 0;
+// }
+
+// diametter of a bTTREE (O (n^2))
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* right;
+//     node* left;
+//     node(int n){
+//         data=n; left=NULL; right=NULL;
+//     }
+// };
+// int height(node* n){
+//     if(n==NULL) return 0;
+//     return max(height(n->left),height(n->right))+1; 
+// }
+// int dia(node* n){
+//     if(n==NULL) return 0;
+//     int di=height(n->left)+height(n->right)+1;
+//     int ld=dia(n->left);
+//     int rd=dia(n->right);
+//     return max(di,max(ld,rd));
+// }
+// void display(node* head){
+//     if(head==NULL) return;
+//     display(head->left);
+//     cout<<head->data<<" ";
+//     display(head->right);
+// }
+// int main(){
+//     node* head=new node(1);
+//     head->left=new node(2);
+//     head->right=new node(3);
+//     head->right->left=new node(6);
+//     head->left->left=new node(4);
+//     head->left->right=new node(5);
+//     head->left->right->left=new node(100);
+//     cout<<dia(head);
+//     return 0;
+// }
+
+//     1
+//   2   3
+// 4  5 6  
+//  100
+
+// better code for diameter of bTREE (O(n))
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* right;
+//     node* left;
+//     node(int n){
+//         data=n; left=NULL; right=NULL;
+//     }
+// };
+// int dia(node* n,int* h){
+//     if(n==NULL) return 0;
+//     int lh(0),rh(0);
+//     int ld=dia(n->left,&lh);
+//     int rd=dia(n->right,&rh);
+//     int cd=lh+rh+1;
+//     *h=max(lh,rh)+1;
+//     return max(cd,max(ld,rd));
+// }
+// void display(node* head){
+//     if(head==NULL) return;
+//     display(head->left);
+//     cout<<head->data<<" ";
+//     display(head->right);
+// }
+// int main(){
+//     node* head=new node(1);
+//     head->left=new node(2);
+//     head->right=new node(3);
+//     head->right->left=new node(3);
+//     int h=0;
+//     cout<<dia(head,&h);
+//     return 0;
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node* right;
+//     node* left;
+//     node(int n){
+//         data=n; left=NULL; right=NULL;
+//     }
+// };
+// int dia(node* n,int* h){
+//     if(n==NULL) return 0;
+//     int lh(0),rh(0);
+//     int ld=dia(n->left,&lh);
+//     int rd=dia(n->right,&rh);
+//     int cd=ld+rd+1;
+//     return max(cd,max(ld,rd));
+// }
+// void display(node* head){
+//     if(head==NULL) return;
+//     display(head->left);
+//     cout<<head->data<<" ";
+//     display(head->right);
+// }
+// int main(){
+//     node* head=new node(1);
+//     int h=0;
+//     cout<<dia(head,&h);
+//     return 0;
+// }
