@@ -42,21 +42,56 @@
 
 // reversing a sentence using stack
 
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
  
-int main(){
-    stack<string> s;
-    string s1="vansh is good";
-    string x="";
-    for(int i=0;i<s1.size();i++){
-        if(i==s1.size()-1) x+=s1[i];
-        if(s1[i]==' ' || i==s1.size()-1) {s.push(x); x="";}
-        else x+=s1[i];   
-    }
-    while(!s.empty()){
-        cout<<s.top()<<" ";
-        s.pop();
-    }
-    return 0;
-}
+// int main(){
+//     stack<string> s;
+//     string s1="vansh is good";
+//     string x="";
+//     for(int i=0;i<s1.size();i++){
+//         if(i==s1.size()-1) x+=s1[i];
+//         if(s1[i]==' ' || i==s1.size()-1) {s.push(x); x="";}
+//         else x+=s1[i];   
+//     }
+//     while(!s.empty()){
+//         cout<<s.top()<<" ";
+//         s.pop();
+//     }
+//     return 0;
+// }
+
+
+// reversing a stack using recursion
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// void bottom(int t,stack<int> &s){
+//     if(s.empty()) {
+//         s.push(t);
+//         return; 
+//     }
+//     int ele=s.top();
+//     s.pop();
+//     bottom(t,s);
+//     s.push(ele);
+// }
+// void removetop(stack<int> &s){
+//     if(s.empty()) return;
+//     int t=s.top();
+//     s.pop();
+//     removetop(s);
+//     bottom(t,s);
+// }
+// int main(){
+//     stack<int> s;
+//     s.push(1);
+//     s.push(2);
+//     s.push(3);
+//     removetop(s);
+//     while(!s.empty()){
+//         cout<<s.top()<<endl;
+//         s.pop();
+//     }
+//     return 0;
+// }
