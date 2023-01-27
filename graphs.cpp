@@ -102,3 +102,82 @@
 //     dfs(adj,vis,0,ans);
 //     return ans;
 // }
+
+
+// number of provinces
+
+// void dfs(int node,vector<int>&vis,vector<int>list[]){
+//         vis[node]=1;
+//         for(auto it:list[node]){
+//             if(vis[it]==0){
+//                 dfs(it,vis,list);
+//             }
+//         }
+//     }
+//     int numProvinces(vector<vector<int>> adj, int V) {
+//         vector<int>list[V];
+//         for(int i=0;i<V;i++){
+//             for(int j=0;j<V;j++){
+//                 if(i!=j && adj[i][j]==1){
+//                     list[i].push_back(j);
+//                     list[j].push_back(i);
+//                 }
+//             }
+//         }
+//         vector<int>vis(V,0);
+//         int cnt=0;
+//         for(int i=0;i<V;i++){
+//             if(vis[i]==0){
+//                 dfs(i,vis,list);
+//                 cnt++;
+//             }
+//         }
+//         return cnt;
+//     }
+
+
+// number of islands usinf DFS
+
+// void bfs(vector<vector<int>> &vis,vector<vector<char>> &grid,int row,int col){
+//         vis[row][col]=1;
+//         int n=grid.size();
+//         int m=grid[0].size();
+//         queue<pair<int,int>> q;
+//         q.push({row,col});
+//         while(!q.empty()){
+//             int nrow=q.front().first;
+//             int ncol=q.front().second;
+//             q.pop();
+//             for(int i=-1;i<=1;i++){
+//                 for(int j=-1;j<=1;j++){
+//                     int lrow=nrow+i;
+//                     int lcol=ncol+j;
+//                     if(lrow<n && lrow>=0 && lcol<m && lcol>=0 && grid[lrow][lcol]=='1' && vis[lrow][lcol]!=1){
+//                         vis[lrow][lcol]=1;
+//                         q.push({lrow,lcol});
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     int numIslands(vector<vector<char>>& grid) {
+//         int n=grid.size();
+//         int m=grid[0].size();
+//         vector<vector<int>> vis(n,vector<int>(m,0));
+//         int ans=0;
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 if(grid[i][j]=='1' && vis[i][j]!=1){
+//                     ans++;
+//                     bfs(vis,grid,i,j);
+//                 }
+//             }
+//         }
+//         return ans;
+        
+//     }
+
+
+
+// number of islands using bfs
+
