@@ -181,3 +181,32 @@
 
 // number of islands using bfs
 
+// void dfs(vector<vector<char>>& grid,vector<vector<int>>& vis,int i, int j){
+//         vis[i][j]=1;
+//         int n=grid.size();
+//         int m=grid[0].size();
+//         for(int x=-1;x<=1;x++){
+//             for(int y=-1;y<=1;y++){
+//                 int r=i+x;
+//                 int c=j+y;
+//                 if(c>=0 and c<=m and r>=0 and r<=n and grid[r][c]=='1' and vis[r][c]==0){
+//                     dfs(grid,vis,i,j);
+//                 }
+//             }
+//         }
+//     }
+//     int numIslands(vector<vector<char>>& grid) {
+//         int ans=0;
+//         int n=grid.size();
+//         int m=grid[0].size();
+//         vector<vector<int>> vis(n,vector<int>(m,0));
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 if(grid[i][j]=='1' and vis[i][j]==0){
+//                     dfs(grid,vis,i,j);
+//                     ans++;
+//                 }
+//             }
+//         }
+//         return ans;
+//     }
