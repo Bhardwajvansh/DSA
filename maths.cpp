@@ -45,3 +45,25 @@
 //     return 0;
 // }
 
+// representing polinomial
+
+#include<bits/stdc++.h>
+using namespace std;
+struct term{
+    int coef;
+    int exp;
+};
+struct poly{
+    int n;
+    struct term *t;
+};
+int main(){
+    struct poly p;
+    p.n=5;
+    p.t=new term[p.n];
+    for(int i=0;i<p.n;i++){
+        cin>>p.t[i].coef;
+        cin>>p.t[i].exp;
+    }
+    return 0;
+}
