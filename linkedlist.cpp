@@ -328,50 +328,57 @@
 
 
 
-#include<bits/stdc++.h>
-using namespace std;
-class node{
-    public:
-    int data;
-    node * next;
-    node * ran;
-    node(int n){
-        data=n;
-        next=NULL;
-        ran=NULL;
-    }
-};
-void insert(node* &head,int val){
-    node * n=new node(val);
-    node* temp=head;
-    while(temp->next!=NULL) temp=temp->next;
-    temp->next=n;
-}
-void display(node * head){
-    node * temp=head;
-    while(temp!=NULL){
-        cout<<temp->data<<" ";
-        temp=temp->next;
-    }   
-}
-node * rem(node * head,int n){
-    while(head->data!=n){
-        head=head->next;
-    }
-    node * nw=head;
-    while (nw!=NULL){
-        if(nw->next->data==n) {nw->next=nw->next->next; nw=nw->next;}
-        else nw=nw->next;
-    }
-    return head;
-}
-int main(){
-    node * head=new node(1);
-    insert(head,2);
-    // insert(head,3);
-    cout<<head->next->next->data<<endl;
-    // insert(head,2);
-    // insert(head,4);
-    // display(rem(head,2));
-    return 0;
-}
+// #include<bits/stdc++.h>
+// using namespace std;
+// class node{
+//     public:
+//     int data;
+//     node * next;
+//     node * ran;
+//     node(int n){
+//         data=n;
+//         next=NULL;
+//         ran=NULL;
+//     }
+// };
+// void insert(node* &head,int val){
+//     node * n=new node(val);
+//     node* temp=head;
+//     while(temp->next!=NULL) temp=temp->next;
+//     temp->next=n;
+// }
+// void display(node * head){
+//     node * temp=head;
+//     while(temp!=NULL){
+//         cout<<temp->data<<" ";
+//         temp=temp->next;
+//     }   
+// }
+// node * rem(node * head,int n){
+//     while(head->data!=n){
+//         head=head->next;
+//     }
+//     node * nw=head;
+//     while (nw!=NULL){
+//         if(nw->next->data==n) {nw->next=nw->next->next; nw=nw->next;}
+//         else nw=nw->next;
+//     }
+//     return head;
+// }
+// int main(){
+//     node * head=new node(1);
+//     insert(head,2);
+//     // insert(head,3);
+//     cout<<head->next->next->data<<endl;
+//     // insert(head,2);
+//     // insert(head,4);
+//     // display(rem(head,2));
+//     return 0;
+// }
+
+
+
+
+
+
+// ------------------------------------------------------------------------------------
